@@ -1,0 +1,2851 @@
+{
+	"info": {
+		"_postman_id": "b393e1ee-39c1-4daf-b754-1b432a34905f",
+		"name": "googl maps api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23003292"
+	},
+	"item": [
+		{
+			"name": "Add place",
+			"item": [
+				{
+					"name": "name",
+					"item": [
+						{
+							"name": "Граничные значения name",
+							"item": [
+								{
+									"name": "0 символов",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 500\", function () {\r",
+													"    pm.response.to.have.status(500);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has string Internal Server Error\", function () {\r",
+													"    pm.response.to.have.status(\"Internal Server Error\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 1000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": 50,\r\n  \"name\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+									},
+									"response": []
+								},
+								{
+									"name": "1 символов",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Set variable\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.environment.set(\"place_id\", jsonData.place_id);\r",
+													"//pm.expect(jsonData.value).to.eql(100);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": 50,\r\n  \"name\": \"B\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+									},
+									"response": []
+								},
+								{
+									"name": "200 символов",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Set variable\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.environment.set(\"place_id\", jsonData.place_id);\r",
+													"//pm.expect(jsonData.value).to.eql(100);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": 50,\r\n  \"name\": \"Being just a part of the overall picture, the direct participants of technological progress are only a method of political participation and are mixed with non-unique data to the point of complete unr\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+									},
+									"response": []
+								},
+								{
+									"name": "201 символ",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 500\", function () {\r",
+													"    pm.response.to.have.status(500);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has string Internal Server Error\", function () {\r",
+													"    pm.response.to.have.status(\"Internal Server Error\");\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": 50,\r\n  \"name\": \"Being just a part of the overall picture, the direct participants of technological progress are only a method of political participation and are mixed with non-unique data to the point of complete unru\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "null",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name has string Internal Server Error\", function () {\r",
+											"    pm.response.to.have.status(\"Internal Server Error\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 1000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": \"100\",\r\n  \"name\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+							},
+							"response": []
+						},
+						{
+							"name": "пустое значение",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name has string Internal Server Error\", function () {\r",
+											"    pm.response.to.have.status(\"Internal Server Error\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 1000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": \"100\",\r\n  \"name\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+							},
+							"response": []
+						},
+						{
+							"name": "пробел",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name has string Internal Server Error\", function () {\r",
+											"    pm.response.to.have.status(\"Internal Server Error\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 1000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": \"100\",\r\n  \"name\": \" \"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+							},
+							"response": []
+						},
+						{
+							"name": "вместо строки число",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name has string Internal Server Error\", function () {\r",
+											"    pm.response.to.have.status(\"Internal Server Error\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 1000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": \"100\",\r\n  \"name\": 999\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "accuracy",
+					"item": [
+						{
+							"name": "Граничные значения accuracy",
+							"item": [
+								{
+									"name": "-2147483649",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 500\", function () {\r",
+													"    pm.response.to.have.status(500);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has string Internal Server Error\", function () {\r",
+													"    pm.response.to.have.status(\"Internal Server Error\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": -2147483649,\r\n  \"name\": \"Frontline house\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+									},
+									"response": []
+								},
+								{
+									"name": "-2147483648",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has string Not Found\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Body status has string OK\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.status).to.eql(\"OK\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Property 'place_id' is there\", function() {\r",
+													"    var jsonData = pm.response.json();\r",
+													"  pm.expect(jsonData).to.have.property(\"place_id\");\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": -2147483648,\r\n  \"name\": \"Frontline house\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+									},
+									"response": []
+								},
+								{
+									"name": "-1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has string Not Found\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Body status has string OK\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.status).to.eql(\"OK\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Property 'place_id' is there\", function() {\r",
+													"    var jsonData = pm.response.json();\r",
+													"  pm.expect(jsonData).to.have.property(\"place_id\");\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": -1,\r\n  \"name\": \"Frontline house\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+									},
+									"response": []
+								},
+								{
+									"name": "0",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has string Not Found\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Body status has string OK\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.status).to.eql(\"OK\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Property 'place_id' is there\", function() {\r",
+													"    var jsonData = pm.response.json();\r",
+													"  pm.expect(jsonData).to.have.property(\"place_id\");\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": 0,\r\n  \"name\": \"Frontline house\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+									},
+									"response": []
+								},
+								{
+									"name": "1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has string Not Found\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Body status has string OK\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.status).to.eql(\"OK\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Property 'place_id' is there\", function() {\r",
+													"    var jsonData = pm.response.json();\r",
+													"  pm.expect(jsonData).to.have.property(\"place_id\");\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": 1,\r\n  \"name\": \"Frontline house\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+									},
+									"response": []
+								},
+								{
+									"name": "2147483647",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has string Not Found\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Body status has string OK\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.status).to.eql(\"OK\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Property 'place_id' is there\", function() {\r",
+													"    var jsonData = pm.response.json();\r",
+													"  pm.expect(jsonData).to.have.property(\"place_id\");\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": 2147483647,\r\n  \"name\": \"Frontline house\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+									},
+									"response": []
+								},
+								{
+									"name": "2147483648",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 500\", function () {\r",
+													"    pm.response.to.have.status(500);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has string Internal Server Error\", function () {\r",
+													"    pm.response.to.have.status(\"Internal Server Error\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": 2147483648,\r\n  \"name\": \"Frontline house\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "null",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name has string Internal Server Error\", function () {\r",
+											"    pm.response.to.have.status(\"Internal Server Error\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 5000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": null,\r\n  \"name\": \"Frontline house\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+							},
+							"response": []
+						},
+						{
+							"name": "пустое значение",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name has string Internal Server Error\", function () {\r",
+											"    pm.response.to.have.status(\"Internal Server Error\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 5000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": ,\r\n  \"name\": \"Frontline house\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+							},
+							"response": []
+						},
+						{
+							"name": "вместа числа строка",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name has string Internal Server Error\", function () {\r",
+											"    pm.response.to.have.status(\"Internal Server Error\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 5000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": \"100\",\r\n  \"name\": \"Frontline house\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Обязательные и необязательные поля",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name has string Not Found\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 5000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body status has string OK\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.status).to.eql(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Property 'place_id' is there\", function() {\r",
+									"    var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData).to.have.property(\"place_id\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": 50,\r\n  \"name\": \"Frontline house\",\r\n  \"phone_number\": \"(+91) 983 893 3937\",\r\n  \"address\": \"29, side layout, cohen 09\",\r\n  \"types\": [\r\n    \"shoe park\",\r\n    \"shop\"\r\n  ],\r\n  \"website\": \"http://google.com\",\r\n  \"language\": \"French-IN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+					},
+					"response": []
+				},
+				{
+					"name": "Только обязательные поля",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name has string Not Found\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 5000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body status has string OK\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.status).to.eql(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Property 'place_id' is there\", function() {\r",
+									"    var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData).to.have.property(\"place_id\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": 50,\r\n  \"name\": \"Frontline house\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+					},
+					"response": []
+				},
+				{
+					"name": "Только необязательные",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 500\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name has string Internal Server Error\", function () {\r",
+									"    pm.response.to.have.status(\"Internal Server Error\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 5000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"phone_number\": \"(+91) 983 893 3937\",\r\n  \"address\": \"29, side layout, cohen 09\",\r\n  \"types\": [\r\n    \"shoe park\",\r\n    \"shop\"\r\n  ],\r\n  \"website\": \"http://google.com\",\r\n  \"language\": \"French-IN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+					},
+					"response": []
+				},
+				{
+					"name": "Поля перемешаны",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name has string Not Found\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 5000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body status has string OK\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.status).to.eql(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Property 'place_id' is there\", function() {\r",
+									"    var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData).to.have.property(\"place_id\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accuracy\": 50,\r\n    \"location\": {\r\n        \"lat\": -38.383494,\r\n        \"lng\": 33.427362\r\n    },\r\n    \"name\": \"Frontline house\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get place",
+			"item": [
+				{
+					"name": "Get place",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Data in body is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.location.latitude).to.eql(\"-38.383494\");\r",
+									"    pm.expect(jsonData.location.longitude).to.eql(\"33.427362\");\r",
+									"    pm.expect(jsonData.accuracy).to.eql(\"50\");\r",
+									"    pm.expect(jsonData.name).to.eql(\"Frontline house\");\r",
+									"    pm.expect(jsonData.phone_number).to.eql(\"(+91) 983 893 3937\");\r",
+									"    pm.expect(jsonData.address).to.eql(\"29, side layout, cohen 09\");\r",
+									"    pm.expect(jsonData.types).to.eql(\"shoe park,shop\");\r",
+									"    pm.expect(jsonData.website).to.eql(\"http://google.com\");\r",
+									"    pm.expect(jsonData.language).to.eql(\"French-IN\");\r",
+									"    \r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"addressTemp\", \"\");\r",
+									"\r",
+									"const postRequest = {\r",
+									"  url: 'https://rahulshettyacademy.com/maps/api/place/add/json?key={{key}}',\r",
+									"  method: 'POST',\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({\r",
+									"  \"location\": {\r",
+									"    \"lat\": -38.383494,\r",
+									"    \"lng\": 33.427362\r",
+									"  },\r",
+									"  \"accuracy\": 50,\r",
+									"  \"name\": \"Frontline house\",\r",
+									"  \"phone_number\": \"(+91) 983 893 3937\",\r",
+									"  \"address\": \"29, side layout, cohen 09\",\r",
+									"  \"types\": [\r",
+									"    \"shoe park\",\r",
+									"    \"shop\"\r",
+									"  ],\r",
+									"  \"website\": \"http://google.com\",\r",
+									"  \"language\": \"French-IN\"\r",
+									"})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    pm.sendRequest(postRequest, (error, response) => {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"         pm.environment.set(\"place_id\", response.json().place_id);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rahulshettyacademy.com/maps/api/place/get/json?place_id={{place_id}}",
+							"protocol": "https",
+							"host": [
+								"rahulshettyacademy",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"place",
+								"get",
+								"json"
+							],
+							"query": [
+								{
+									"key": "place_id",
+									"value": "{{place_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "id=0",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name has string Not Found\", function () {\r",
+									"    pm.response.to.have.status(\"Not Found\");\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Get operation failed, looks like place_id  doesn't exists\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rahulshettyacademy.com/maps/api/place/get/json?place_id=0",
+							"protocol": "https",
+							"host": [
+								"rahulshettyacademy",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"place",
+								"get",
+								"json"
+							],
+							"query": [
+								{
+									"key": "place_id",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "пустой id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name has string Not Found\", function () {\r",
+									"    pm.response.to.have.status(\"Not Found\");\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Get operation failed, looks like place_id  doesn't exists\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rahulshettyacademy.com/maps/api/place/get/json?place_id=",
+							"protocol": "https",
+							"host": [
+								"rahulshettyacademy",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"place",
+								"get",
+								"json"
+							],
+							"query": [
+								{
+									"key": "place_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Не существующий ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name has string Not Found\", function () {\r",
+									"    pm.response.to.have.status(\"Not Found\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Get operation failed, looks like place_id  doesn't exists\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rahulshettyacademy.com/maps/api/place/get/json?place_id={{place_id_error}}",
+							"protocol": "https",
+							"host": [
+								"rahulshettyacademy",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"place",
+								"get",
+								"json"
+							],
+							"query": [
+								{
+									"key": "place_id",
+									"value": "{{place_id_error}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Update place",
+			"item": [
+				{
+					"name": "пустой address",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.msg).to.eql(\"Address successfully updated\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.sendRequest('https://rahulshettyacademy.com/maps/api/place/get/json?place_id='+pm.environment.get(\"place_id\")+'&key='+pm.environment.get(\"key\"), (error, response) => {\r",
+									"    pm.test(\"Проверка GET после PUT\", function () {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"        pm.expect(response.json().address).to.eql(pm.environment.get(\"addressTemp\"));\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"addressTemp\", \"\");\r",
+									"\r",
+									"const postRequest = {\r",
+									"  url: 'https://rahulshettyacademy.com/maps/api/place/add/json?key={{key}}',\r",
+									"  method: 'POST',\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({\r",
+									"  \"location\": {\r",
+									"    \"lat\": -38.383494,\r",
+									"    \"lng\": 33.427362\r",
+									"  },\r",
+									"  \"accuracy\": 50,\r",
+									"  \"name\": \"Frontline house\",\r",
+									"  \"phone_number\": \"(+91) 983 893 3937\",\r",
+									"  \"address\": \"29, side layout, cohen 09\",\r",
+									"  \"types\": [\r",
+									"    \"shoe park\",\r",
+									"    \"shop\"\r",
+									"  ],\r",
+									"  \"website\": \"http://google.com\",\r",
+									"  \"language\": \"French-IN\"\r",
+									"})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    pm.sendRequest(postRequest, (error, response) => {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"         pm.environment.set(\"place_id\", response.json().place_id);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"place_id\": \"{{place_id}}\",\r\n\"address\": \"{{addressTemp}}\",\r\n\"key\": \"{{key}}\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://rahulshettyacademy.com/maps/api/place/update/json"
+					},
+					"response": []
+				},
+				{
+					"name": "у adress вместо строки число",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.msg).to.eql(\"Address successfully updated\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.sendRequest('https://rahulshettyacademy.com/maps/api/place/get/json?place_id='+pm.environment.get(\"place_id\")+'&key='+pm.environment.get(\"key\"), (error, response) => {\r",
+									"    pm.test(\"Проверка GET после PUT - число преобразовалось в строку\", function () {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"        pm.expect(response.json().address).to.eql(\"123\");\r",
+									"    \r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"addressTemp\", 123);\r",
+									"\r",
+									"const postRequest = {\r",
+									"  url: 'https://rahulshettyacademy.com/maps/api/place/add/json?key={{key}}',\r",
+									"  method: 'POST',\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({\r",
+									"  \"location\": {\r",
+									"    \"lat\": -38.383494,\r",
+									"    \"lng\": 33.427362\r",
+									"  },\r",
+									"  \"accuracy\": 50,\r",
+									"  \"name\": \"Frontline house\",\r",
+									"  \"phone_number\": \"(+91) 983 893 3937\",\r",
+									"  \"address\": \"29, side layout, cohen 09\",\r",
+									"  \"types\": [\r",
+									"    \"shoe park\",\r",
+									"    \"shop\"\r",
+									"  ],\r",
+									"  \"website\": \"http://google.com\",\r",
+									"  \"language\": \"French-IN\"\r",
+									"})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    pm.sendRequest(postRequest, (error, response) => {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"         pm.environment.set(\"place_id\", response.json().place_id);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"place_id\": \"{{place_id}}\",\r\n\"address\": {{addressTemp}},\r\n\"key\": \"{{key}}\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://rahulshettyacademy.com/maps/api/place/update/json"
+					},
+					"response": []
+				},
+				{
+					"name": "Update place",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.msg).to.eql(\"Address successfully updated\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.sendRequest('https://rahulshettyacademy.com/maps/api/place/get/json?place_id='+pm.environment.get(\"place_id\")+'&key='+pm.environment.get(\"key\"), (error, response) => {\r",
+									"    pm.test(\"Проверка GET после PUT\", function () {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"        pm.expect(response.json().address).to.eql(pm.environment.get(\"addressTemp\"));\r",
+									"    \r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"addressTemp\", \"69, side layout, cohen 09\");\r",
+									"\r",
+									"const postRequest = {\r",
+									"  url: 'https://rahulshettyacademy.com/maps/api/place/add/json?key={{key}}',\r",
+									"  method: 'POST',\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({\r",
+									"  \"location\": {\r",
+									"    \"lat\": -38.383494,\r",
+									"    \"lng\": 33.427362\r",
+									"  },\r",
+									"  \"accuracy\": 50,\r",
+									"  \"name\": \"Frontline house\",\r",
+									"  \"phone_number\": \"(+91) 983 893 3937\",\r",
+									"  \"address\": \"29, side layout, cohen 09\",\r",
+									"  \"types\": [\r",
+									"    \"shoe park\",\r",
+									"    \"shop\"\r",
+									"  ],\r",
+									"  \"website\": \"http://google.com\",\r",
+									"  \"language\": \"French-IN\"\r",
+									"})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    pm.sendRequest(postRequest, (error, response) => {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"         pm.environment.set(\"place_id\", response.json().place_id);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"place_id\": \"{{place_id}}\",\r\n\"address\": \"{{addressTemp}}\",\r\n\"key\": \"{{key}}\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://rahulshettyacademy.com/maps/api/place/update/json"
+					},
+					"response": []
+				},
+				{
+					"name": "Обновление address на то же самое значение",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.msg).to.eql(\"Address successfully updated\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.sendRequest('https://rahulshettyacademy.com/maps/api/place/get/json?place_id='+pm.environment.get(\"place_id\")+'&key='+pm.environment.get(\"key\"), (error, response) => {\r",
+									"    pm.test(\"Проверка GET после PUT\", function () {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"        pm.expect(response.json().address).to.eql(pm.environment.get(\"addressTemp\"));\r",
+									"    \r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"addressTemp\", \"69, side layout, cohen 09\");\r",
+									"\r",
+									"const postRequest = {\r",
+									"  url: 'https://rahulshettyacademy.com/maps/api/place/add/json?key={{key}}',\r",
+									"  method: 'POST',\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({\r",
+									"  \"location\": {\r",
+									"    \"lat\": -38.383494,\r",
+									"    \"lng\": 33.427362\r",
+									"  },\r",
+									"  \"accuracy\": 50,\r",
+									"  \"name\": \"Frontline house\",\r",
+									"  \"phone_number\": \"(+91) 983 893 3937\",\r",
+									"  \"address\": \"29, side layout, cohen 09\",\r",
+									"  \"types\": [\r",
+									"    \"shoe park\",\r",
+									"    \"shop\"\r",
+									"  ],\r",
+									"  \"website\": \"http://google.com\",\r",
+									"  \"language\": \"French-IN\"\r",
+									"})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    pm.sendRequest(postRequest, (error, response) => {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"         pm.environment.set(\"place_id\", response.json().place_id);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"place_id\": \"{{place_id}}\",\r\n\"address\": \"69, side layout, cohen 09\",\r\n\"key\": \"{{key}}\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://rahulshettyacademy.com/maps/api/place/update/json"
+					},
+					"response": []
+				},
+				{
+					"name": "Обновление всех полей",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.msg).to.eql(\"Address successfully updated\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.sendRequest('https://rahulshettyacademy.com/maps/api/place/get/json?place_id='+pm.environment.get(\"place_id\")+'&key='+pm.environment.get(\"key\"), (error, response) => {\r",
+									"    pm.test(\"Проверка GET после PUT\", function () {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"        pm.expect(response.json().address).to.eql(pm.environment.get(\"addressTemp\"));\r",
+									"        \r",
+									"        pm.expect(response.json().location.latitude).to.eql(pm.environment.get(\"lat\"));\r",
+									"        pm.expect(response.json().location.longitude).to.eql(pm.environment.get(\"lng\"));\r",
+									"        pm.expect(response.json().accuracy).to.eql(pm.environment.get(\"accuracy\"));\r",
+									"        pm.expect(response.json().name).to.eql(pm.environment.get(\"name\"));\r",
+									"        pm.expect(response.json().phone_number).to.eql(pm.environment.get(\"phone_number\"));\r",
+									"        pm.expect(response.json().types).to.eql(pm.environment.get(\"types_1\")+\",\"+pm.environment.get(\"types_2\"));\r",
+									"        pm.expect(response.json().website).to.eql(pm.environment.get(\"website\"));\r",
+									"        pm.expect(response.json().language).to.eql(pm.environment.get(\"language\"));\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"addressTemp\", \"69, side layout, cohen 09\");\r",
+									"\r",
+									"const postRequest = {\r",
+									"  url: 'https://rahulshettyacademy.com/maps/api/place/add/json?key={{key}}',\r",
+									"  method: 'POST',\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({\r",
+									"  \"location\": {\r",
+									"    \"lat\": -38.383494,\r",
+									"    \"lng\": 33.427362\r",
+									"  },\r",
+									"  \"accuracy\": 50,\r",
+									"  \"name\": \"Frontline house\",\r",
+									"  \"phone_number\": \"(+91) 983 893 3937\",\r",
+									"  \"address\": \"29, side layout, cohen 09\",\r",
+									"  \"types\": [\r",
+									"    \"shoe park\",\r",
+									"    \"shop\"\r",
+									"  ],\r",
+									"  \"website\": \"http://google.com\",\r",
+									"  \"language\": \"England-IN\"\r",
+									"})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    pm.sendRequest(postRequest, (error, response) => {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"         pm.environment.set(\"place_id\", response.json().place_id);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"place_id\": \"{{place_id}}\",\r\n    \"location\": {\r\n        \"lat\": -35.383494,\r\n        \"lng\": 35.427362\r\n    },\r\n    \"accuracy\": 55,\r\n    \"name\": \"After update name\",\r\n    \"phone_number\": \"(+91) 983 893 3937\",\r\n    \"address\": \"{{addressTemp}}\",\r\n    \"types\": [\r\n        \"test park\",\r\n        \"test\"\r\n    ],\r\n    \"website\": \"http://test.com\",\r\n    \"language\": \"French-IN\",\r\n    \"key\": \"{{key}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://rahulshettyacademy.com/maps/api/place/update/json"
+					},
+					"response": []
+				},
+				{
+					"name": "без ключа",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 500\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name has string Internal Server Error\", function () {\r",
+									"    pm.response.to.have.status(\"Internal Server Error\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"addressTemp\", \"69, side layout, cohen 09\");\r",
+									"\r",
+									"const postRequest = {\r",
+									"  url: 'https://rahulshettyacademy.com/maps/api/place/add/json?key={{key}}',\r",
+									"  method: 'POST',\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({\r",
+									"  \"location\": {\r",
+									"    \"lat\": -38.383494,\r",
+									"    \"lng\": 33.427362\r",
+									"  },\r",
+									"  \"accuracy\": 50,\r",
+									"  \"name\": \"Frontline house\",\r",
+									"  \"phone_number\": \"(+91) 983 893 3937\",\r",
+									"  \"address\": \"29, side layout, cohen 09\",\r",
+									"  \"types\": [\r",
+									"    \"shoe park\",\r",
+									"    \"shop\"\r",
+									"  ],\r",
+									"  \"website\": \"http://google.com\",\r",
+									"  \"language\": \"French-IN\"\r",
+									"})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Отправлен POST Add place для получения place_id\", function () {\r",
+									"    pm.sendRequest(postRequest, (error, response) => {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"         pm.environment.set(\"place_id\", response.json().place_id);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"place_id\": \"{{place_id}}\",\r\n\"address\": \"{{addressTemp}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://rahulshettyacademy.com/maps/api/place/update/json"
+					},
+					"response": []
+				},
+				{
+					"name": "без place_id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 500\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name has string Internal Server Error\", function () {\r",
+									"    pm.response.to.have.status(\"Internal Server Error\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"addressTemp\", \"69, side layout, cohen 09\");\r",
+									"\r",
+									"const postRequest = {\r",
+									"  url: 'https://rahulshettyacademy.com/maps/api/place/add/json?key={{key}}',\r",
+									"  method: 'POST',\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({\r",
+									"  \"location\": {\r",
+									"    \"lat\": -38.383494,\r",
+									"    \"lng\": 33.427362\r",
+									"  },\r",
+									"  \"accuracy\": 50,\r",
+									"  \"name\": \"Frontline house\",\r",
+									"  \"phone_number\": \"(+91) 983 893 3937\",\r",
+									"  \"address\": \"29, side layout, cohen 09\",\r",
+									"  \"types\": [\r",
+									"    \"shoe park\",\r",
+									"    \"shop\"\r",
+									"  ],\r",
+									"  \"website\": \"http://google.com\",\r",
+									"  \"language\": \"French-IN\"\r",
+									"})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    pm.sendRequest(postRequest, (error, response) => {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"         pm.environment.set(\"place_id\", response.json().place_id);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"address\": \"{{addressTemp}}\",\r\n\"key\": \"{{key}}\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://rahulshettyacademy.com/maps/api/place/update/json"
+					},
+					"response": []
+				},
+				{
+					"name": "Не сущетвующий ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name has string Internal Server Error\", function () {\r",
+									"    pm.response.to.have.status(\"Not Found\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Update address operation failed, looks like the data doesn't exists\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"addressTemp\", \"69, side layout, cohen 09\");\r",
+									"\r",
+									"const postRequest = {\r",
+									"  url: 'https://rahulshettyacademy.com/maps/api/place/add/json?key={{key}}',\r",
+									"  method: 'POST',\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({\r",
+									"  \"location\": {\r",
+									"    \"lat\": -38.383494,\r",
+									"    \"lng\": 33.427362\r",
+									"  },\r",
+									"  \"accuracy\": 50,\r",
+									"  \"name\": \"Frontline house\",\r",
+									"  \"phone_number\": \"(+91) 983 893 3937\",\r",
+									"  \"address\": \"29, side layout, cohen 09\",\r",
+									"  \"types\": [\r",
+									"    \"shoe park\",\r",
+									"    \"shop\"\r",
+									"  ],\r",
+									"  \"website\": \"http://google.com\",\r",
+									"  \"language\": \"French-IN\"\r",
+									"})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Отправлен POST Add place для получения place_id\", function () {\r",
+									"    pm.sendRequest(postRequest, (error, response) => {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"         pm.environment.set(\"place_id\", response.json().place_id);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"place_id\": \"{{place_id_error}}\",\r\n\"address\": \"{{addressTemp}}\",\r\n\"key\": \"{{key}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://rahulshettyacademy.com/maps/api/place/update/json"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Remove place",
+			"item": [
+				{
+					"name": "Remove place",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.status).to.eql(\"OK\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const postRequest = {\r",
+									"  url: 'https://rahulshettyacademy.com/maps/api/place/add/json?key={{key}}',\r",
+									"  method: 'POST',\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({\r",
+									"  \"location\": {\r",
+									"    \"lat\": -38.383494,\r",
+									"    \"lng\": 33.427362\r",
+									"  },\r",
+									"  \"accuracy\": 50,\r",
+									"  \"name\": \"Frontline house\",\r",
+									"  \"phone_number\": \"(+91) 983 893 3937\",\r",
+									"  \"address\": \"29, side layout, cohen 09\",\r",
+									"  \"types\": [\r",
+									"    \"shoe park\",\r",
+									"    \"shop\"\r",
+									"  ],\r",
+									"  \"website\": \"http://google.com\",\r",
+									"  \"language\": \"French-IN\"\r",
+									"})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    pm.sendRequest(postRequest, (error, response) => {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"         pm.environment.set(\"place_id\", response.json().place_id);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"place_id\": \"{{place_id}}\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://rahulshettyacademy.com/maps/api/place/delete/json"
+					},
+					"response": []
+				},
+				{
+					"name": "дублируется place_id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.status).to.eql(\"OK\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const postRequest = {\r",
+									"  url: 'https://rahulshettyacademy.com/maps/api/place/add/json?key={{key}}',\r",
+									"  method: 'POST',\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({\r",
+									"  \"location\": {\r",
+									"    \"lat\": -38.383494,\r",
+									"    \"lng\": 33.427362\r",
+									"  },\r",
+									"  \"accuracy\": 50,\r",
+									"  \"name\": \"Frontline house\",\r",
+									"  \"phone_number\": \"(+91) 983 893 3937\",\r",
+									"  \"address\": \"29, side layout, cohen 09\",\r",
+									"  \"types\": [\r",
+									"    \"shoe park\",\r",
+									"    \"shop\"\r",
+									"  ],\r",
+									"  \"website\": \"http://google.com\",\r",
+									"  \"language\": \"French-IN\"\r",
+									"})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    pm.sendRequest(postRequest, (error, response) => {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"         pm.environment.set(\"place_id\", response.json().place_id);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"place_id\": \"{{place_id}}\",\r\n    \"place_id\": \"{{place_id}}\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://rahulshettyacademy.com/maps/api/place/delete/json"
+					},
+					"response": []
+				},
+				{
+					"name": "Не существующий ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.msg).to.eql(\"Delete operation failed, looks like the data doesn't exists\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const postRequest = {\r",
+									"  url: 'https://rahulshettyacademy.com/maps/api/place/add/json?key={{key}}',\r",
+									"  method: 'POST',\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({\r",
+									"  \"location\": {\r",
+									"    \"lat\": -38.383494,\r",
+									"    \"lng\": 33.427362\r",
+									"  },\r",
+									"  \"accuracy\": 50,\r",
+									"  \"name\": \"Frontline house\",\r",
+									"  \"phone_number\": \"(+91) 983 893 3937\",\r",
+									"  \"address\": \"29, side layout, cohen 09\",\r",
+									"  \"types\": [\r",
+									"    \"shoe park\",\r",
+									"    \"shop\"\r",
+									"  ],\r",
+									"  \"website\": \"http://google.com\",\r",
+									"  \"language\": \"French-IN\"\r",
+									"})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    pm.sendRequest(postRequest, (error, response) => {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"         pm.environment.set(\"place_id\", response.json().place_id);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"place_id\": \"{{place_id_error}}\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://rahulshettyacademy.com/maps/api/place/delete/json"
+					},
+					"response": []
+				},
+				{
+					"name": "пробел",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.msg).to.eql(\"Delete operation failed, looks like the data doesn't exists\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const postRequest = {\r",
+									"  url: 'https://rahulshettyacademy.com/maps/api/place/add/json?key={{key}}',\r",
+									"  method: 'POST',\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({\r",
+									"  \"location\": {\r",
+									"    \"lat\": -38.383494,\r",
+									"    \"lng\": 33.427362\r",
+									"  },\r",
+									"  \"accuracy\": 50,\r",
+									"  \"name\": \"Frontline house\",\r",
+									"  \"phone_number\": \"(+91) 983 893 3937\",\r",
+									"  \"address\": \"29, side layout, cohen 09\",\r",
+									"  \"types\": [\r",
+									"    \"shoe park\",\r",
+									"    \"shop\"\r",
+									"  ],\r",
+									"  \"website\": \"http://google.com\",\r",
+									"  \"language\": \"French-IN\"\r",
+									"})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    pm.sendRequest(postRequest, (error, response) => {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"         pm.environment.set(\"place_id\", response.json().place_id);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"place_id\": \" \"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://rahulshettyacademy.com/maps/api/place/delete/json"
+					},
+					"response": []
+				},
+				{
+					"name": "пустое значение",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.msg).to.eql(\"Delete operation failed, looks like the data doesn't exists\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const postRequest = {\r",
+									"  url: 'https://rahulshettyacademy.com/maps/api/place/add/json?key={{key}}',\r",
+									"  method: 'POST',\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({\r",
+									"  \"location\": {\r",
+									"    \"lat\": -38.383494,\r",
+									"    \"lng\": 33.427362\r",
+									"  },\r",
+									"  \"accuracy\": 50,\r",
+									"  \"name\": \"Frontline house\",\r",
+									"  \"phone_number\": \"(+91) 983 893 3937\",\r",
+									"  \"address\": \"29, side layout, cohen 09\",\r",
+									"  \"types\": [\r",
+									"    \"shoe park\",\r",
+									"    \"shop\"\r",
+									"  ],\r",
+									"  \"website\": \"http://google.com\",\r",
+									"  \"language\": \"French-IN\"\r",
+									"})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    pm.sendRequest(postRequest, (error, response) => {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"         pm.environment.set(\"place_id\", response.json().place_id);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"place_id\": \"\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://rahulshettyacademy.com/maps/api/place/delete/json"
+					},
+					"response": []
+				},
+				{
+					"name": "Без place_id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.environment.set(\"place_id\", null);\r",
+									"});\r",
+									"\r",
+									"postman.setNextRequest(\"Get place\")"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const postRequest = {\r",
+									"  url: 'https://rahulshettyacademy.com/maps/api/place/add/json?key={{key}}',\r",
+									"  method: 'POST',\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({\r",
+									"  \"location\": {\r",
+									"    \"lat\": -38.383494,\r",
+									"    \"lng\": 33.427362\r",
+									"  },\r",
+									"  \"accuracy\": 50,\r",
+									"  \"name\": \"Frontline house\",\r",
+									"  \"phone_number\": \"(+91) 983 893 3937\",\r",
+									"  \"address\": \"29, side layout, cohen 09\",\r",
+									"  \"types\": [\r",
+									"    \"shoe park\",\r",
+									"    \"shop\"\r",
+									"  ],\r",
+									"  \"website\": \"http://google.com\",\r",
+									"  \"language\": \"French-IN\"\r",
+									"})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    pm.sendRequest(postRequest, (error, response) => {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"         pm.environment.set(\"place_id\", response.json().place_id);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://rahulshettyacademy.com/maps/api/place/delete/json"
+					},
+					"response": []
+				},
+				{
+					"name": "два раза отправляется запрос на удаление",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.collectionVariables.get(\"secondRequest\")) {\r",
+									"console.log(pm.collectionVariables.get(\"secondRequest\"))\r",
+									"pm.collectionVariables.unset(\"secondRequest\")\r",
+									"\r",
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"msg: Delete operation failed, looks like the data doesn't exists\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.msg).to.eql(\"Delete operation failed, looks like the data doesn't exists\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"} else {\r",
+									"pm.collectionVariables.unset(\"secondRequest\")\r",
+									"pm.collectionVariables.set(\"secondRequest\", true)\r",
+									"postman.setNextRequest(\"88a315ff-0c01-456a-8d88-a9728f2da4d0\")\r",
+									"}\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"if (pm.collectionVariables.get(\"secondRequest\")===undefined) {\r",
+									"\r",
+									"const postRequest = {\r",
+									"  url: 'https://rahulshettyacademy.com/maps/api/place/add/json?key={{key}}',\r",
+									"  method: 'POST',\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({\r",
+									"  \"location\": {\r",
+									"    \"lat\": -38.383494,\r",
+									"    \"lng\": 33.427362\r",
+									"  },\r",
+									"  \"accuracy\": 50,\r",
+									"  \"name\": \"Frontline house\",\r",
+									"  \"phone_number\": \"(+91) 983 893 3937\",\r",
+									"  \"address\": \"29, side layout, cohen 09\",\r",
+									"  \"types\": [\r",
+									"    \"shoe park\",\r",
+									"    \"shop\"\r",
+									"  ],\r",
+									"  \"website\": \"http://google.com\",\r",
+									"  \"language\": \"French-IN\"\r",
+									"})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Address successfully updated\", function () {\r",
+									"    pm.sendRequest(postRequest, (error, response) => {\r",
+									"        console.log(error ? error : response.json()); \r",
+									"         pm.environment.set(\"place_id\", response.json().place_id);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"};\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"place_id\": \"{{place_id}}\",\r\n    \"place_id\": \"{{place_id}}\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://rahulshettyacademy.com/maps/api/place/delete/json"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Add place",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Set variable\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.environment.set(\"place_id\", jsonData.place_id);\r",
+							"//pm.expect(jsonData.value).to.eql(100);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": 50,\r\n  \"name\": \"Frontline house\",\r\n  \"phone_number\": \"(+91) 983 893 3937\",\r\n  \"address\": \"29, side layout, cohen 09\",\r\n  \"types\": [\r\n    \"shoe park\",\r\n    \"shop\"\r\n  ],\r\n  \"website\": \"http://google.com\",\r\n  \"language\": \"French-IN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://rahulshettyacademy.com/maps/api/place/add/json"
+			},
+			"response": []
+		},
+		{
+			"name": "Get place",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verification of status code\", function () {\r",
+							"    if (pm.environment.get(\"place_id\")) {\r",
+							"        pm.response.to.have.status(200);\r",
+							"        pm.test(\"Address is correct\", function () {\r",
+							"            var jsonData = pm.response.json();\r",
+							"            console.log(jsonData)\r",
+							"            pm.expect(jsonData.address).to.eql(\"29, side layout, cohen 09\");\r",
+							"            \r",
+							"        });\r",
+							"    }else {\r",
+							"        pm.response.to.have.status(404);\r",
+							"        postman.setNextRequest(null)\r",
+							"    }\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://rahulshettyacademy.com/maps/api/place/get/json?place_id={{place_id}}",
+					"protocol": "https",
+					"host": [
+						"rahulshettyacademy",
+						"com"
+					],
+					"path": [
+						"maps",
+						"api",
+						"place",
+						"get",
+						"json"
+					],
+					"query": [
+						{
+							"key": "place_id",
+							"value": "{{place_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update place",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Address successfully updated\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.eql(\"Address successfully updated\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"place_id\": \"{{place_id}}\",\r\n\"address\": \"69, side layout, cohen 09\",\r\n\"key\": \"qaclick123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://rahulshettyacademy.com/maps/api/place/update/json"
+			},
+			"response": []
+		},
+		{
+			"name": "Remove place",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.environment.set(\"place_id\", null);\r",
+							"});\r",
+							"\r",
+							"postman.setNextRequest(\"Get place\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"place_id\": \"{{place_id}}\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://rahulshettyacademy.com/maps/api/place/delete/json"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": {
+			"in": "query",
+			"value": "{{key}}",
+			"key": "key"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "address",
+			"value": ""
+		},
+		{
+			"key": "address1",
+			"value": ""
+		},
+		{
+			"key": "addressTemp",
+			"value": ""
+		},
+		{
+			"key": "addressTemp3",
+			"value": ""
+		}
+	]
+}
