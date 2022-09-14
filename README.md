@@ -1,3 +1,8 @@
+googl maps api.postman_collection.json - коллекция тестов
+
+google maps api.postman_environment.json - переменные, в том числе там хранится key для авторизации
+
+
 В данном файле представлены примеры тестов для Postman.
 
 В тестах использован свободный, открытый API от https://rahulshettyacademy.com/.
@@ -10,8 +15,6 @@
 + js тесты
 + pre request script
 
-googl maps api.postman_collection.json - коллекция тестов
 
-google maps api.postman_environment.json - переменные, в том числе там хранится key для авторизации
 
 
